@@ -34,7 +34,7 @@ export default function Home() {
         return resolve(geocodeMemo[searchCity])
       }
 
-      fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${searchCity}&limit=1&appid=${process.env.NEXT_PUBLIC_OPENWEATHER_KEY}`)
+      fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${searchCity}&limit=1&appid=${process.env.NEXT_PUBLIC_OPENWEATHER_KEY}`)
       .then(data => {
         data
           .json()
