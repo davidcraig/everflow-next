@@ -25,10 +25,12 @@ body {
 
 input {
   background: var(--bg-light, --bg);
+  @apply p-2;
 }
 
 button {
   background: var(--bg-dark, --bg);
+  @apply p-2;
 }
 
 .card {

@@ -69,7 +69,7 @@ export default function Home() {
       </nav>
 
       <main className="p-4">
-        <h1>Hows the weather?</h1>
+        <h1 className='text-lg'>Hows the weather?</h1>
         <form onSubmit={(e) => {
           e.preventDefault()
           WeatherSearch()
