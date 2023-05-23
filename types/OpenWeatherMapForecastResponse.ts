@@ -5,7 +5,7 @@ type OpenWeatherMapForecastResponse = {
 
 type ForecastList = {
   dt: number;
-  dt_text: string;
+  dt_txt: string;
   main: ForecastMain;
   weather: ForecastWeather[];
 }

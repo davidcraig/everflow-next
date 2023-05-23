@@ -1,6 +1,5 @@
 'use client';
 import WeatherCard from '@/src/WeatherCard';
-import type WeatherCardData from '@/types/WeatherCardData';
 import type OpenWeatherMapForecastResponse from '@/types/OpenWeatherMapForecastResponse';
 import { useEffect, useState } from 'react'
 
@@ -21,13 +20,12 @@ export default function Home() {
           .then(json => {
             console.log(json)
             setForecast(json)
-            // return json[0]
           })
           .catch(err => setErrors([...errors, err]))
       })
       .catch(err => setErrors([...errors, err]))
-      })
-      .catch(err => {})
+    })
+    .catch(err => setErrors([...errors, err]))
   }
 
   async function GeocodeCity() {
@@ -75,20 +73,22 @@ export default function Home() {
         {forecast && forecast.list && (
           <>
             <div className='grid gap-2 grid-cols-1 md:grid-cols-3 lg:grid-cols-5'>
-            {forecast.list.map((item: OpenWeatherMapForecastResponse) => (
+            {forecast.list.map((item) =>
               <WeatherCard
+                key={item.dt_txt}
                 date={item.dt_txt}
                 desc={item.weather[0].description}
                 temp={item.main.temp}
                 icon={item.weather[0].icon}
               />
-            ))}
+            )}
             </div>
           </>
         )}
 
         {errors && errors.length > 0 && (
           <>
+            <h1>Errors</h1>
             {errors.map(e => <p>{e}</p>)}
           </>
         )}

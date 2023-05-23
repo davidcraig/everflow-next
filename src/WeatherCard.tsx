@@ -1,7 +1,6 @@
 import type WeatherCardData from "@/types/WeatherCardData"
 
 const WeatherCard = ({ date, desc, temp, icon }: WeatherCardData) => {
-  console.log(date, desc, temp, icon)
   return (
     <div className="card">
       <p className="date">{date}</p>
