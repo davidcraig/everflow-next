@@ -63,8 +63,14 @@ export default function Home() {
 
       <main className="p-4">
         <h1>Hows the weather?</h1>
-        <input type='text' onChange={(e) => setSearchCity(e.target.value)} />
-        <button onClick={() => WeatherSearch()} className='ml-2 px-2'>Search</button>
+        <form onSubmit={(e) => {
+          e.preventDefault()
+          WeatherSearch()
+        }}>
+          <input placeholder='Enter city then click search' type='text' onChange={(e) => setSearchCity(e.target.value)} />
+          <button className='ml-2 px-2'>Search</button>
+        </form>
+        
 
         { /* Cards */ }
         {forecast && forecast.list && (
