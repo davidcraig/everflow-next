@@ -7,7 +7,7 @@ const geocodeMemo: {[key: string]: {}} = {}
 
 export default function Home() {
   const [searchCity, setSearchCity] = useState<string>('')
-  const [forecast, setForecast] = useState<OpenWeatherMapForecastResponse>(null);
+  const [forecast, setForecast] = useState<OpenWeatherMapForecastResponse>();
   const [errors, setErrors] = useState<string[]>([]);
 
   async function WeatherSearch() {
