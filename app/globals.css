@@ -30,3 +30,8 @@ input {
 button {
   background: var(--bg-dark, --bg);
 }
+
+.card {
+  @apply border-solid border p-2 mt-2;
+  border-color: var(--bg-light);
+}
