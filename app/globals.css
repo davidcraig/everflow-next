@@ -32,8 +32,6 @@ button {
 }
 
 .card {
-  @apply border-solid border p-2 mt-2 grid text-center;
-  @apply border-solid border p-2 mt-2 grid text-center;
+  @apply border-solid border p-2 mt-2 text-center flex flex-col items-center;
   border-color: var(--bg-light);
-  justify-content: center;
 }
