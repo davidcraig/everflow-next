@@ -68,8 +68,8 @@ export default function Home() {
         <a>Everflow Weather Dashboard</a>
       </nav>
 
-      <main className="p-4">
-        <h1 className='text-lg'>Hows the weather?</h1>
+      <main className="px-4 py-8">
+        <h1 className='text-lg mb-2'>Hows the weather?</h1>
         <form onSubmit={(e) => {
           e.preventDefault()
           WeatherSearch()

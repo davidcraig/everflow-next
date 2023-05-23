@@ -9,22 +9,29 @@
   --bg-dark: hsl(0, 0%, 87%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: hsl(223, 94%, 13%);
-    --text: #ececec;
-    --bg-light: hsl(223, 94%, 20%);
-    --bg-dark: hsl(223, 94%, 8%);
-  }
-}
-
 body {
   background: var(--bg);
   color: var(--text);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: hsl(223, 94%, 13%);
+    --text: #ececec;
+    --bg-light: hsl(223, 94%, 25%);
+    --bg-dark: hsl(223, 94%, 8%);
+  }
+
+  body {
+    background: rgb(6,0,99);
+    background: linear-gradient(180deg, rgba(6,0,99,1) 0%, rgba(0,114,255,1) 100%);
+    height: 100vh;
+  }
+}
+
 input {
-  background: var(--bg-light, --bg);
+  background: rgba(0,0,0,.2);
+  border: 1px solid var(--bg-light);
   @apply p-2;
 }
 
@@ -36,4 +43,9 @@ button {
 .card {
   @apply border-solid border p-2 mt-2 text-center flex flex-col items-center;
   border-color: var(--bg-light);
+  background: rgba(0,0,0,0.2);
+}
+
+nav {
+  background: rgba(0,0,0,.3);
 }
