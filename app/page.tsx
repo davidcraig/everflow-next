@@ -11,6 +11,7 @@ export default function Home() {
   const [errors, setErrors] = useState<string[]>([]);
 
   async function WeatherSearch() {
+    setForecast(undefined);
     await GeocodeCity()
     .then(geo => {
       fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${geo.lat}&lon=${geo.lon}&units=metric&cnt=5&appid=${process.env.NEXT_PUBLIC_OPENWEATHER_KEY}`)
@@ -18,7 +19,6 @@ export default function Home() {
         data
           .json()
           .then(json => {
-            console.log(json)
             setForecast(json)
           })
           .catch(err => setErrors([...errors, err]))
