@@ -5,7 +5,7 @@ const WeatherCard = ({ date, desc, temp, icon }: WeatherCardData) => {
 
   return (
     <div className="card">
-      <p className="date">{date}</p>
+      <p className="date">{new Date(date).toLocaleString()}</p>
       <img width={100} height={100} src={`https://openweathermap.org/img/wn/${icon}@2x.png`} />
       <p className="description">{desc}</p>
       <p>{temp}°c {emoji}</p>
