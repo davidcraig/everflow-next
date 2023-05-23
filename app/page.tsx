@@ -14,11 +14,18 @@ export default function Home() {
     setForecast(undefined);
     await GeocodeCity()
     .then((geo: any) => {
-      fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${geo.lat}&lon=${geo.lon}&units=metric&cnt=5&appid=${process.env.NEXT_PUBLIC_OPENWEATHER_KEY}`)
+      fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${geo.lat}&lon=${geo.lon}&units=metric&cnt=40&appid=${process.env.NEXT_PUBLIC_OPENWEATHER_KEY}`)
       .then(data => {
         data
           .json()
           .then(json => {
+            json.list = [
+              json.list[7],
+              json.list[15],
+              json.list[23],
+              json.list[31],
+              json.list[39],
+            ]
             setForecast(json)
           })
           .catch(err => setErrors([...errors, err]))
